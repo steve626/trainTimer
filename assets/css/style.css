@@ -10,6 +10,7 @@ body {
     opacity: 0.85;
     font-size: 30px;
     background:lightgray;
+    padding: 32px;
 
 }
 
@@ -21,11 +22,20 @@ body {
     padding: 5px;
     }
 
-    button {
+    #addTrainBtn {
         margin: 5px;
         padding: 5px;
     }
 
     label {
         font-size: 1.25rem;
+    }
+
+    th {
+        text-decoration: underline;
+        font-size: 1.25rem;
+    }
+
+    .table {
+        text-align: center;
     }

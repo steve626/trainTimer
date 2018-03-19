@@ -9,6 +9,8 @@
   };
   firebase.initializeApp(config);
 
+ 
+
   var database = firebase.database();
 
   $("#addTrainBtn").on("click", function(event){
@@ -44,7 +46,8 @@
 
   database.ref().on("child_added", function(childSnapshot, prevChildKey){
 
-    //console.log(childSnaphot.val());
+
+
 
     var trainName = childSnapshot.val().name;
     var trainDest = childSnapshot.val().dest;
@@ -74,6 +77,24 @@
     console.log("arrival time: " + moment(nextTrain).format("HH:mm"));
 
 $("#trainData").append("<tr><td>" + trainName + "</td><td>" + trainDest + "</td><td>" + trainFreq +
-"</td><td>" + (moment(nextTrain).format("HH:mm")) + "</td><td>" + minUntilTrain +"</td></tr>");
+"</td><td>" + (moment(nextTrain).format("HH:mm")) + "</td><td>" + minUntilTrain +"</td><td><button type='button' class='btn btn-primary btn-sm delete'>delete</button></td></tr>");
+
+// $(".delete").on("click", function() {
+//     $(this).database.ref.val().remove();
+// });
+
+$(".delete").on("click", function() {        
+    $(this).parent().prevAll().parent().remove();
+
+     });
+
+     $(".delete").on("click", function() {        
+        $(this).database.ref().childSnapshot().remove();
+    
+        });
 
   });
+
+
+
+  //add delete train button, refresh times every minute and delete when next time = zero, show alert "your train has arrived"
