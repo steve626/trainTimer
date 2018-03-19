@@ -9,8 +9,11 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">   
-    <!-- Added link to the jQuery Library -->
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <!-- Added link to the moment.js-->
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+      <!-- Added link to the jQuery Library -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     
   </head>
 <body>
@@ -20,7 +23,7 @@
        </div>
 
        <div class="row">
-         <div class="col-lg-12">
+         <div class="col-lg-10">
 
        <div class="panel panel-primary">
           <div class="panel-heading">
@@ -43,7 +46,8 @@
        </div>
 
        
-       <div class="container" id="inputBox">
+       <div class="panel panel-primary" id="inputBox">
+
             <form>
                     <div class="form-group">
                       <label for="InputName">Name of Train</label>
@@ -71,20 +75,8 @@
 
    
    
-    <!-- Added link to the jQuery Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
     <script type="text/javascript" href="assets/javascript/app.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-          apiKey: "AIzaSyBF7M76nqwU8m_uQZxJ5pJmaMgCxFf_GAA",
-          authDomain: "train-timer-f4922.firebaseapp.com",
-          databaseURL: "https://train-timer-f4922.firebaseio.com",
-          projectId: "train-timer-f4922",
-          storageBucket: "",
-          messagingSenderId: "769276536856"
-        };
-        firebase.initializeApp(config);
-      </script>
+  
 </body>
 </html>

@@ -4,7 +4,7 @@
     authDomain: "train-timer-f4922.firebaseapp.com",
     databaseURL: "https://train-timer-f4922.firebaseio.com",
     projectId: "train-timer-f4922",
-    storageBucket: "",
+    storageBucket: "train-timer-f4922.appspot.com",
     messagingSenderId: "769276536856"
   };
   firebase.initializeApp(config);
