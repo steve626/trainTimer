@@ -16,7 +16,7 @@
 
     var trainName = $("#name").val().trim();
     var trainDest = $("#destination").val().trim();
-    var trainTime = moment($("#time").val().trim(), "HH:mm");
+    var trainTime = $("#time").val().trim();
     var trainFreq = $("#frequency").val().trim();
 
     var newTrain = {
@@ -44,7 +44,7 @@
 
   database.ref().on("child_added", function(childSnapshot, prevChildKey){
 
-    console.log(childSnaphot.val());
+    //console.log(childSnaphot.val());
 
     var trainName = childSnapshot.val().name;
     var trainDest = childSnapshot.val().dest;
@@ -74,6 +74,6 @@
     console.log("arrival time: " + moment(nextTrain).format("HH:mm"));
 
 $("#trainData").append("<tr><td>" + trainName + "</td><td>" + trainDest + "</td><td>" + trainFreq +
-"</td><td>" + nextTrain + "</td><td>" + minUntilTrain +"</td></tr>");
+"</td><td>" + (moment(nextTrain).format("HH:mm")) + "</td><td>" + minUntilTrain +"</td></tr>");
 
   });
