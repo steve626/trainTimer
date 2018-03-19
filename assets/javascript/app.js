@@ -56,11 +56,24 @@
     console.log(trainTime);
     console.log(trainFreq);
 
-    var timeNow = moment().format("HH:mm");
+    var trainTimeConverted = moment(trainTime, "HH:mm").subtract(1,"years");
 
-    console.log(timeNow);
+    var timeNow = moment();    
+    console.log("current time: " +moment(timeNow).format("HH:mm"));
 
-    
+    var diffTime = moment().diff(moment(trainTimeConverted), "minutes");
+    console.log("time difference: "+diffTime);
 
+    var timeRemainder = diffTime % trainFreq;
+    console.log("time %: " +timeRemainder);
 
-  })
+    var minUntilTrain = trainFreq - timeRemainder;
+    console.log("min until next train: "+ minUntilTrain);
+
+    var nextTrain = moment().add(minUntilTrain, "minutes");
+    console.log("arrival time: " + moment(nextTrain).format("HH:mm"));
+
+$("#trainData").append("<tr><td>" + trainName + "</td><td>" + trainDest + "</td><td>" + trainFreq +
+"</td><td>" + nextTrain + "</td><td>" + minUntilTrain +"</td></tr>");
+
+  });
