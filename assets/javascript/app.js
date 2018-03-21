@@ -79,21 +79,18 @@
 $("#trainData").append("<tr><td>" + trainName + "</td><td>" + trainDest + "</td><td>" + trainFreq +
 "</td><td>" + (moment(nextTrain).format("HH:mm")) + "</td><td>" + minUntilTrain +"</td><td><button type='button' class='btn btn-primary btn-sm delete'>delete</button></td></tr>");
 
-// $(".delete").on("click", function() {
-//     $(this).database.ref.val().remove();
-// });
+
 
 $(".delete").on("click", function() {        
-    $(this).parent().prevAll().parent().remove();
+  event.preventDefault();
+   $(this).parent().prevAll().parent().remove();
+   database.ref(prevChildKey).remove();
 
      });
 
-     $(".delete").on("click", function() {        
-        $(this).database.ref(prevChildKey).remove();
-    
-        });
+  
 
-  });
+   });
 
 
 
