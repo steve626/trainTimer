@@ -89,11 +89,13 @@ $(".delete").on("click", function() {
      });
 
      $(".delete").on("click", function() {        
-        $(this).database.ref().childSnapshot().remove();
+        $(this).database.ref(prevChildKey).remove();
     
         });
 
   });
+
+
 
 
 

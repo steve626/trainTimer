@@ -11,6 +11,9 @@ body {
     font-size: 30px;
     background:lightgray;
     padding: 32px;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+
 
 }
 
@@ -22,16 +25,20 @@ body {
     padding: 5px;
     }
 
-    #addTrainBtn {
+.panel-title {
+        text-decoration: underline;
+    }
+
+#addTrainBtn {
         margin: 5px;
         padding: 5px;
     }
 
-    label {
+label {
         font-size: 1.25rem;
     }
 
-    th {
+th {
         text-decoration: underline;
         font-size: 1.25rem;
     }
